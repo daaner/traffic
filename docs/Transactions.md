@@ -4,10 +4,12 @@
 
 ## Содержание
 - [x] [Вывод списка транзакций](Transactions.md#showTransaction)
+- [x] [Вывод конкретной транзакции](Transactions.md#edit)
 
 
 ## Все методы модели
 - [showTransaction](#showTransaction)
+- [edit](#edit)
 
 
 ---
@@ -15,7 +17,7 @@
 
 
 ### `showTransaction`
-AUTH
+AUTH Bearer JWT
 
 Вывод списка транзакций пользователя.
 
@@ -33,7 +35,20 @@ $query = [
 
 ```
 
-[filename](json/transactions_show.json ':include')
+
+### `edit`
+AUTH Bearer JWT
+
+Вывод конкретной транзакции по ID.
+
+```php
+// Транзакции для пользователя
+// GET $url = '/api/transactions/{id}/edit';
+$url = '/api/transactions/100500/edit';
+
+```
+
+[filename](json/transactions_edit.json ':include')
 
 [Содержание](#Содержание) [Методы модели](#Все-методы-модели)
 ***

@@ -1,0 +1,27 @@
+{
+    "success": true,
+    "data": {
+        "id": 2,
+        "user_id": 3,
+        "source_id": 2,
+        "external_id": "a80f28e4-d116-464d-98a0-799b79f9bdd0",
+        "currency_id": 1,
+        "amount": "-1753.00",
+        "comment": "PwPsvwA5SLAr5J9xkp3jtQnjBcQ6p7tsnN4nmqH2p072rThxNM6WylhBqS9An25izhQi1jhh6sx9lPU7kfjeRrZ54bL4dAJd0ktM",
+        "created_at": "2023-07-07T11:49:22.000000Z",
+        "updated_at": "2023-07-13T11:49:22.000000Z",
+        "deleted_at": null,
+        "currency": {
+            "id": 1,
+            "iso": "USD",
+            "symbol": "$",
+            "prefix": 1
+        },
+        "source": {
+            "id": 2,
+            "key": "brocard",
+            "front_name": "BroCard",
+            "type": "liability"
+        }
+    }
+}
