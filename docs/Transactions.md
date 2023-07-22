@@ -15,13 +15,16 @@
 
 
 ### `showTransaction`
+AUTH
+
 Вывод списка транзакций пользователя.
 
 ```php
 // Транзакции для пользователя
+// GET
 $url = '/api/transactions/show';
-// либо
-$formData = [
+// поля для запроса (все не обязательные)
+$query = [
   "from" => '2023-06-01', //необязательно
   "to" => '2023-07-30', //необязательно
   "page" => 2, // по умолчанию 1
@@ -29,7 +32,8 @@ $formData = [
 ];
 
 ```
-[Пример ответа](json/transactions_show.json)
+[Пример ответа](https://github.com/daaner/traffic/blob/main/docs/json/transactions_show.json)
+
 [Содержание](#Содержание) [Методы модели](#Все-методы-модели)
 ***
 
