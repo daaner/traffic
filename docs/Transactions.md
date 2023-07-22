@@ -272,7 +272,7 @@ AUTH Bearer JWT
 ```php
 // Транзакции для пользователя
 // GET $url = '/api/transactions/{id}/edit';
-$url = '/api/transactions/100500/edit';
+$url = '/api/transactions/500/edit';
 
 ```
 
@@ -291,18 +291,22 @@ $url = '/api/transactions/100500/edit';
     "comment": "6G2cDA529zpujUiwA6zQeS9kIrCfJzmCk53Q8VlMuc4PI2k0wmkt4bn9RMBNPsx1m6Z6CiwMXr9AMtr3e81ca4tr71gd40aHmVMH",
     "created_at": "2023-07-06T11:49:23.000000Z",
     "updated_at": "2023-07-13T11:49:24.000000Z",
-    "deleted_at": null,
     "currency": {
       "id": 1,
       "iso": "USD",
       "symbol": "$",
-      "prefix": 1
+      "prefix": true
     },
     "source": {
       "id": 1,
       "key": "keitaro",
       "front_name": "Keitaro",
       "type": "asset"
+    },
+    "user": {
+      "id": 3,
+      "name": "test",
+      "email": "login@site.net"
     }
   }
 }
