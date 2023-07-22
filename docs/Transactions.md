@@ -32,8 +32,14 @@ $query = [
   "page" => 2, // по умолчанию 1
   "count" => 15,  //по умолчанию 25
 ];
-
 ```
+
+Пример ответа
+[filename](json/transactions_show.json ':include')
+
+[Содержание](#Содержание) [Методы модели](#Все-методы-модели)
+***
+
 
 
 ### `edit`
@@ -47,7 +53,7 @@ AUTH Bearer JWT
 $url = '/api/transactions/100500/edit';
 
 ```
-
+Пример ответа
 [filename](json/transactions_edit.json ':include')
 
 [Содержание](#Содержание) [Методы модели](#Все-методы-модели)
