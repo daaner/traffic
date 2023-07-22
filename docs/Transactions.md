@@ -32,7 +32,8 @@ $query = [
 ];
 
 ```
-[Пример ответа](https://github.com/daaner/traffic/blob/main/docs/json/transactions_show.json)
+
+[filename](json/transactions_show.json ':include')
 
 [Содержание](#Содержание) [Методы модели](#Все-методы-модели)
 ***
