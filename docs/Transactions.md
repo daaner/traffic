@@ -6,11 +6,13 @@
 
 - [x] [Вывод списка транзакций](Transactions.md#showTransaction)
 - [x] [Вывод конкретной транзакции](Transactions.md#edit)
+- [x] [Вывод транзакций по пользователям](Transactions.md#transactionUser)
 
 ## Все методы модели
 
 - [showTransaction](#showTransaction)
 - [edit](#edit)
+- [transactionUser](#transactionUser)
 
 ---
 
@@ -263,6 +265,7 @@ $query = [
 [Содержание](#Содержание) [Методы модели](#Все-методы-модели)
 ***
 
+
 ### `edit`
 
 AUTH Bearer JWT
@@ -318,6 +321,88 @@ $url = '/api/transactions/500/edit';
 {
   "success": false,
   "data": []
+}
+```
+
+[Содержание](#Содержание) [Методы модели](#Все-методы-модели)
+***
+
+
+### `transactionUser`
+
+AUTH Bearer JWT
+
+Вывод транзакций для конкретного пользователя по ID.
+
+```php
+// поля для запроса (все не обязательные)
+$query = [
+"from" => '2023-06-01', //необязательно
+"to" => '2023-07-30', //необязательно
+"page" => 2, // по умолчанию 1
+"count" => 15,  //по умолчанию 25
+];
+
+// Транзакции для конкретного пользователя
+// GET $url = '/api/user/1/transactions';
+$url = '/api/user/{id}/transactions/';
+
+```
+
+Пример ответа
+
+```json
+{
+  "currentPage": 1,
+  "lastPage": 201,
+  "perPage": 2,
+  "total": 401,
+  "items": [
+    {
+      "id": 407243,
+      "source": "BroCard",
+      "amount": "-29.38",
+      "amount_string": "-$29.38",
+      "external_id": "43***47",
+      "comment": "U***2",
+      "user": {
+        "id": 1,
+        "name": "A***M",
+        "email": "ia***m"
+      },
+      "created_at": "2023-08-08T20:56:59.000000Z"
+    },
+    {
+      "id": 407223,
+      "source": "BroCard",
+      "amount": "-73.57",
+      "amount_string": "-$73.57",
+      "external_id": "43***1",
+      "comment": "Re***AF2",
+      "user": {
+        "id": 1,
+        "name": "A***M",
+        "email": "ia***m"
+      },
+      "created_at": "2023-08-08T20:10:12.000000Z"
+    }
+  ],
+  "totalAmount": "-102.95",
+  "totalAmountString": "-$102.95"
+}
+```
+
+Пример ошибки, данные не найдены или не разрешены к просмотру
+
+```json
+{
+  "currentPage": 1,
+  "lastPage": 1,
+  "perPage": 2,
+  "total": 0,
+  "items": [],
+  "totalAmount": 0,
+  "totalAmountString": "0"
 }
 ```
 
