@@ -7,12 +7,14 @@
 - [x] [Вывод списка транзакций](Transactions.md#showTransaction)
 - [x] [Вывод конкретной транзакции](Transactions.md#edit)
 - [x] [Вывод транзакций по пользователям](Transactions.md#transactionUser)
+- [x] [Вывод сумм по транзакциям пользователей](Transactions.md#getTotals)
 
 ## Все методы модели
 
 - [showTransaction](#showTransaction)
 - [edit](#edit)
 - [transactionUser](#transactionUser)
+- [getTotals](#getTotals)
 
 ---
 
@@ -403,6 +405,52 @@ $url = '/api/user/{id}/transactions/';
   "items": [],
   "totalAmount": 0,
   "totalAmountString": "0"
+}
+```
+
+[Содержание](#Содержание) [Методы модели](#Все-методы-модели)
+***
+
+
+### `getTotals`
+
+AUTH Bearer JWT
+
+Вывод сумм по транзакциям для конкретного пользователя по ID.
+Считает максимально определенное кол-во транзакций, если указан очень большой период
+
+```php
+// поля для запроса (все не обязательные)
+$query = [
+"from" => '2023-06-01', //необязательно
+"to" => '2023-07-30', //необязательно
+];
+
+// Сумма транзакций для конкретного пользователя
+// GET $url = '/api/user/1/transactions';
+$url = '/api/user/{id}/transactions/totals';
+
+```
+
+Пример ответа
+
+```json
+{
+  "BroCard": {
+    "amount": -100.55,
+    "amountString": "-$100.55"
+  },
+  "Keitaro": {
+    "amount": 800.55,
+    "amountString": "$800.55"
+  }
+}
+```
+
+Пример ошибки, данные не найдены или не разрешены к просмотру
+
+```json
+{
 }
 ```
 
