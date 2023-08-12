@@ -436,13 +436,19 @@ $url = '/api/user/{id}/transactions/totals';
 
 ```json
 {
-  "BroCard": {
-    "amount": -100.55,
-    "amountString": "-$100.55"
+  "period": {
+    "from": "2023-08-02",
+    "to": "2023-08-03"
   },
   "Keitaro": {
-    "amount": 800.55,
-    "amountString": "$800.55"
+    "source_id": 1,
+    "amount": "184.00",
+    "amountString": "$184"
+  },
+  "BroCard": {
+    "source_id": 2,
+    "amount": "-698.03",
+    "amountString": "-$698.03"
   }
 }
 ```
